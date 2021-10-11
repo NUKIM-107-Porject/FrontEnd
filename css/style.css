@@ -82,6 +82,7 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 5px;
+  position: relative;
 }
 
 header a {
@@ -107,7 +108,7 @@ header a h1 {
 }
 
 header .burger {
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 header .burger i {
@@ -116,31 +117,55 @@ header .burger i {
 
 header .burgerlist {
   display: none;
-  color: #ffffff;
-  width: 100px;
 }
 
 header .burgerlist.active {
-  z-index: 999;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 999;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+header .burgerlist li {
+  background: #ffffff;
+  border-bottom: 5px solid #5d6c9b;
+  border-right: 5px solid #5d6c9b;
+  border-left: 5px solid #5d6c9b;
+}
+
+header .burgerlist li a {
   font-size: 30px;
+  padding: 10px 50px;
+  color: #2d385a;
+  font-weight: bold;
 }
 
-header .burgerlist a {
-  color: #ffffff;
+header .burgerlist li :hover {
+  background: #5d6c9b;
 }
 
-* {
-  outline: #02ee3d 1px solid;
+header .burgerlist li .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header .burgerlist li .user img {
+  width: 50px;
 }
 
 #map {
